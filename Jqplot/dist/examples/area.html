@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Filled (Area) Charts</title>
+    <link class="include" rel="stylesheet" type="text/css" href="../jquery.jqplot.min.css" />
+    <!--[if lt IE 9]><script language="javascript" type="text/javascript" src="../excanvas.js"></script><![endif]-->
+    <script class="include" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+        
+    </script>
+</head>
+<body>
+
+    <div class="colmask leftmenu">
+      <div class="colleft">
+        <div class="col1" id="example-content">
+<div><span></span><span id="info1b"></span></div>
+
+<div id="chart1b" style="width:400px;height:260px;"></div>
+
+
+<div><span>You Clicked: </span><span id="info1c">Nothing yet</span></div>
+
+
+<div id="customTooltipDiv">I'm a tooltip.</div>
+  
+
+
+<script class="code" language="javascript" type="text/javascript">
+$(document).ready(function(){
+
+    var l2 = [11, 9, 5, 12, 14];
+    var l3 = [4, 8, 5, 3, 6];
+    var l4 = [12, 6, 13, 11, 2];    
+
+    
+    $.jqplot('chart1b',[l2, l3, l4],{
+       "stackSeries": true,
+       "showMarker": false,
+       "seriesDefaults": {
+           fill: true
+       },
+       axes: {
+           xaxis: {
+               renderer: $.jqplot.CategoryAxisRenderer,
+               ticks: ["Mon", "Tue", "Wed", "Thr", "Fri"]
+           }
+       }
+    });
+    
+    /*
+    $('#chart1b').bind('jqplotDataHighlight', 
+        function (ev, seriesIndex, pointIndex, data) {
+            $('#info1b').html('series: '+seriesIndex+', point: '+pointIndex+', data: '+data);
+        }
+    );
+    
+    $('#chart1b').bind('jqplotDataUnhighlight', 
+        function (ev) {
+            $('#info1b').html('Nothing');
+        }
+    );*/
+});
+</script>
+ 
+ 
+
+
+<!-- End example scripts -->
+
+<!-- Don't touch this! -->
+
+
+    <script class="include" type="text/javascript" src="../jquery.jqplot.min.js"></script>
+    <!--script type="text/javascript" src="syntaxhighlighter/scripts/shCore.min.js"></script>
+    <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJScript.min.js"></script>
+    <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushXml.min.js"></script-->
+<!-- Additional plugins go here -->
+
+  <script class="include" type="text/javascript" src="../plugins/jqplot.categoryAxisRenderer.min.js"></script>
+  <script class="include" type="text/javascript" src="../plugins/jqplot.highlighter.min.js"></script>
+  <script class="include" type="text/javascript" src="../plugins/jqplot.canvasTextRenderer.min.js"></script>
+  <script class="include" type="text/javascript" src="../plugins/jqplot.canvasAxisTickRenderer.min.js"></script>
+
+<!-- End additional plugins -->
+
+        </div>
+
+               </div>
+    </div>
+
+</body>
+
+
+</html>
